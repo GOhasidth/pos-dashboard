@@ -1,0 +1,137 @@
+{
+  "marketBasketRules": [
+    { 
+      "rule": "Coffee → Croissant", 
+      "support": 8.5, 
+      "confidence": 73.2, 
+      "lift": 2.4, 
+      "transactions": 1247,
+      "actionable": "Place croissants near coffee station",
+      "impact": "+15% cross-sell rate"
+    },
+    { 
+      "rule": "Latte → Cookie", 
+      "support": 6.2, 
+      "confidence": 68.9, 
+      "lift": 2.1, 
+      "transactions": 891,
+      "actionable": "Suggest cookies during latte orders",
+      "impact": "+12% average order value"
+    },
+    { 
+      "rule": "Breakfast Sandwich → Orange Juice", 
+      "support": 4.8, 
+      "confidence": 82.1, 
+      "lift": 3.2, 
+      "transactions": 672,
+      "actionable": "Bundle breakfast combos",
+      "impact": "+18% morning revenue"
+    },
+    { 
+      "rule": "Salad → Water", 
+      "support": 7.1, 
+      "confidence": 91.3, 
+      "lift": 1.8, 
+      "transactions": 1034,
+      "actionable": "Auto-suggest water with healthy items",
+      "impact": "+8% healthy category sales"
+    },
+    { 
+      "rule": "Hot Chocolate → Marshmallows", 
+      "support": 3.2, 
+      "confidence": 89.4, 
+      "lift": 4.1, 
+      "transactions": 456,
+      "actionable": "Create winter comfort bundles",
+      "impact": "+22% seasonal item sales"
+    }
+  ],
+
+  "sequentialPatterns": [
+    {
+      "sequence": "Morning Coffee → Lunch Salad → Afternoon Tea",
+      "frequency": 234,
+      "dayPattern": "Weekdays 9am → 12pm → 3pm",
+      "customerType": "Office workers",
+      "opportunity": "Create all-day meal plans",
+      "revenue": "$23.45 avg per sequence"
+    },
+    {
+      "sequence": "Pastry → Coffee → Newspaper",
+      "frequency": 189,
+      "dayPattern": "Weekend mornings 8-10am",
+      "customerType": "Leisure customers",
+      "opportunity": "Weekend relaxation packages",
+      "revenue": "$16.80 avg per sequence"
+    },
+    {
+      "sequence": "Sandwich → Chips → Soda",
+      "frequency": 156,
+      "dayPattern": "Lunch rush 11am-2pm",
+      "customerType": "Quick lunch crowd",
+      "opportunity": "Express lunch combos",
+      "revenue": "$14.95 avg per sequence"
+    },
+    {
+      "sequence": "Study Group: Multiple Coffees → Shared Dessert",
+      "frequency": 98,
+      "dayPattern": "Evenings & weekends",
+      "customerType": "Students",
+      "opportunity": "Group study packages",
+      "revenue": "$31.20 avg per group"
+    }
+  ],
+
+  "customerJourney": [
+    { "step": "Enter Store", "dropoff": 0, "users": 1000, "conversion": 100 },
+    { "step": "Browse Menu", "dropoff": 8, "users": 920, "conversion": 92 },
+    { "step": "Decide on Main Item", "dropoff": 12, "users": 809, "conversion": 81 },
+    { "step": "Consider Add-ons", "dropoff": 25, "users": 607, "conversion": 61 },
+    { "step": "Place Order", "dropoff": 5, "users": 577, "conversion": 58 },
+    { "step": "Complete Payment", "dropoff": 3, "users": 560, "conversion": 56 },
+    { "step": "Receive Order", "dropoff": 1, "users": 554, "conversion": 55 }
+  ],
+
+  "aiRecommendations": [
+    {
+      "category": "Store Layout",
+      "priority": "High",
+      "action": "Move croissant display within 3 feet of coffee counter",
+      "reason": "Coffee → Croissant rule shows 73.2% confidence, 2.4x lift",
+      "expectedImpact": "+15% croissant sales, +$234 daily revenue",
+      "timeline": "1 week implementation"
+    },
+    {
+      "category": "Digital Menu",
+      "priority": "High", 
+      "action": "Auto-suggest orange juice when breakfast sandwich added to order",
+      "reason": "82.1% confidence rate, highest lift at 3.2x",
+      "expectedImpact": "+18% morning beverage attach rate",
+      "timeline": "2 days POS update"
+    },
+    {
+      "category": "Inventory",
+      "priority": "Medium",
+      "action": "Stock marshmallows 4x higher during winter months",
+      "reason": "Hot chocolate → marshmallow pattern shows 89.4% confidence",
+      "expectedImpact": "+22% seasonal sales, reduce stockouts",
+      "timeline": "Next inventory cycle"
+    },
+    {
+      "category": "Promotions",
+      "priority": "Medium",
+      "action": "Create \"Study Group Special\" - 4 coffees + shared dessert discount",
+      "reason": "Sequential pattern shows $31.20 avg group orders",
+      "expectedImpact": "+25% evening revenue, student loyalty",
+      "timeline": "1 week marketing prep"
+    },
+    {
+      "category": "Customer Experience",
+      "priority": "Low",
+      "action": "Reduce decision friction in add-on step (25% drop-off)",
+      "reason": "Journey analysis shows highest drop-off at consideration phase",
+      "expectedImpact": "+15% conversion rate improvement",
+      "timeline": "2 weeks UX optimization"
+    }
+  ]
+}

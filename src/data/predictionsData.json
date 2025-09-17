@@ -1,0 +1,97 @@
+{
+  "predictions": {
+    "nextDay": {
+      "sales": 13200,
+      "transactions": 92,
+      "avgOrder": 143.50,
+      "confidence": 87,
+      "factors": ["Monday typically +6% vs Sunday", "Weather forecast: sunny", "No special events"]
+    },
+    "nextWeek": {
+      "sales": 94500,
+      "transactions": 680,
+      "avgOrder": 139.00,
+      "confidence": 82,
+      "factors": ["Holiday week expected", "School back in session", "New menu launch planned"]
+    },
+    "nextMonth": {
+      "sales": 410000,
+      "transactions": 3050,
+      "avgOrder": 134.40,
+      "confidence": 75,
+      "factors": ["Seasonal menu change", "Historical October growth: +5.8%", "Local events calendar"]
+    },
+    "nextQuarter": {
+      "sales": 1180000,
+      "transactions": 8800,
+      "avgOrder": 134.10,
+      "confidence": 68,
+      "factors": ["Holiday season boost", "Winter menu introduction", "Economic indicators stable"]
+    },
+    "nextYear": {
+      "sales": 4950000,
+      "transactions": 36800,
+      "avgOrder": 134.50,
+      "confidence": 60,
+      "factors": ["Market expansion planned", "Competition analysis", "Economic growth projections"]
+    }
+  },
+
+  "productPredictions": {
+    "nextDay": [
+      { "name": "Premium Coffee", "currentSales": 145, "predictedSales": 165, "growth": "+13.8%", "confidence": 92, "reason": "Monday morning rush expected" },
+      { "name": "Breakfast Sandwich", "currentSales": 67, "predictedSales": 85, "growth": "+26.9%", "confidence": 88, "reason": "Start of work week boost" },
+      { "name": "Latte", "currentSales": 78, "predictedSales": 82, "growth": "+5.1%", "confidence": 85, "reason": "Consistent demand pattern" },
+      { "name": "Croissant", "currentSales": 89, "predictedSales": 92, "growth": "+3.4%", "confidence": 80, "reason": "Slight increase expected" },
+      { "name": "Energy Drink", "currentSales": 23, "predictedSales": 35, "growth": "+52.2%", "confidence": 75, "reason": "Monday energy boost trend" }
+    ],
+    "nextWeek": [
+      { "name": "Pumpkin Spice Latte", "currentSales": 234, "predictedSales": 420, "growth": "+79.5%", "confidence": 90, "reason": "Fall season launch this week" },
+      { "name": "Premium Coffee", "currentSales": 987, "predictedSales": 1150, "growth": "+16.5%", "confidence": 87, "reason": "Back-to-school increased demand" },
+      { "name": "Hot Chocolate", "currentSales": 156, "predictedSales": 245, "growth": "+57.1%", "confidence": 83, "reason": "Weather turning cooler" },
+      { "name": "Soup & Bread", "currentSales": 89, "predictedSales": 140, "growth": "+57.3%", "confidence": 85, "reason": "Comfort food season begins" },
+      { "name": "Iced Coffee", "currentSales": 432, "predictedSales": 380, "growth": "-12.0%", "confidence": 78, "reason": "Seasonal decline expected" }
+    ],
+    "nextMonth": [
+      { "name": "Holiday Blend Coffee", "currentSales": 0, "predictedSales": 850, "growth": "NEW", "confidence": 85, "reason": "October holiday menu launch" },
+      { "name": "Cinnamon Roll", "currentSales": 234, "predictedSales": 380, "growth": "+62.4%", "confidence": 88, "reason": "Fall comfort food trend" },
+      { "name": "Seasonal Salads", "currentSales": 145, "predictedSales": 95, "growth": "-34.5%", "confidence": 82, "reason": "End of fresh produce season" },
+      { "name": "Hot Tea Varieties", "currentSales": 167, "predictedSales": 285, "growth": "+70.7%", "confidence": 80, "reason": "Cool weather preference shift" },
+      { "name": "Premium Coffee", "currentSales": 4250, "predictedSales": 4680, "growth": "+10.1%", "confidence": 90, "reason": "Consistent year-round demand" }
+    ],
+    "nextQuarter": [
+      { "name": "Holiday Cookie Box", "currentSales": 0, "predictedSales": 1200, "growth": "NEW", "confidence": 92, "reason": "Christmas season specialty" },
+      { "name": "Eggnog Latte", "currentSales": 0, "predictedSales": 890, "growth": "NEW", "confidence": 89, "reason": "Holiday seasonal favorite" },
+      { "name": "Winter Soup Menu", "currentSales": 450, "predictedSales": 1100, "growth": "+144.4%", "confidence": 87, "reason": "Cold weather comfort food" },
+      { "name": "Gift Cards", "currentSales": 234, "predictedSales": 1850, "growth": "+690.6%", "confidence": 95, "reason": "Holiday gifting surge" },
+      { "name": "Hot Beverages", "currentSales": 2800, "predictedSales": 4200, "growth": "+50.0%", "confidence": 93, "reason": "Winter season preference" }
+    ],
+    "nextYear": [
+      { "name": "Plant-Based Menu", "currentSales": 1200, "predictedSales": 3400, "growth": "+183.3%", "confidence": 78, "reason": "Growing health consciousness trend" },
+      { "name": "Cold Brew Line", "currentSales": 2800, "predictedSales": 4100, "growth": "+46.4%", "confidence": 85, "reason": "Expanding cold coffee market" },
+      { "name": "Breakfast Bowls", "currentSales": 890, "predictedSales": 1900, "growth": "+113.5%", "confidence": 80, "reason": "Health food trend continuation" },
+      { "name": "Premium Coffee", "currentSales": 52000, "predictedSales": 58500, "growth": "+12.5%", "confidence": 92, "reason": "Core product steady growth" },
+      { "name": "Digital-Only Items", "currentSales": 0, "predictedSales": 2200, "growth": "NEW", "confidence": 70, "reason": "App-exclusive menu expansion" }
+    ]
+  },
+
+  "predictionTrends": [
+    { "period": "Yesterday", "actual": 12450, "predicted": 12300 },
+    { "period": "Last Week", "actual": 89320, "predicted": 91200 },
+    { "period": "Last Month", "actual": 387500, "predicted": 385000 },
+    { "period": "Current Quarter", "actual": 1250000, "predicted": 1235000 },
+    { "period": "Current Year", "actual": 4650000, "predicted": 4600000 }
+  ],
+
+  "hourlyPrediction": [
+    { "hour": "9 AM", "predicted": 900, "historical": 850, "confidence": 92 },
+    { "hour": "10 AM", "predicted": 1250, "historical": 1200, "confidence": 89 },
+    { "hour": "11 AM", "predicted": 1900, "historical": 1850, "confidence": 85 },
+    { "hour": "12 PM", "predicted": 2200, "historical": 2100, "confidence": 91 },
+    { "hour": "1 PM", "predicted": 2050, "historical": 1950, "confidence": 88 },
+    { "hour": "2 PM", "predicted": 1650, "historical": 1600, "confidence": 86 },
+    { "hour": "3 PM", "predicted": 1450, "historical": 1400, "confidence": 83 },
+    { "hour": "4 PM", "predicted": 1800, "historical": 1750, "confidence": 87 },
+    { "hour": "5 PM", "predicted": 1350, "historical": 1300, "confidence": 84 }
+  ]
+}

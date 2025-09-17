@@ -1,0 +1,105 @@
+{
+  "salesData": {
+    "today": { "total": 12850, "transactions": 87, "avgOrder": 143.10 },
+    "week": { "total": 89320, "transactions": 645, "avgOrder": 138.50 },
+    "month": { "total": 387500, "transactions": 2890, "avgOrder": 134.10 },
+    "quarterly": { "total": 1250000, "transactions": 8750, "avgOrder": 142.86 },
+    "yearly": { "total": 4650000, "transactions": 34500, "avgOrder": 134.78 }
+  },
+  
+  "trendData": [
+    { "time": "9 AM", "sales": 850 },
+    { "time": "10 AM", "sales": 1200 },
+    { "time": "11 AM", "sales": 1850 },
+    { "time": "12 PM", "sales": 2100 },
+    { "time": "1 PM", "sales": 1950 },
+    { "time": "2 PM", "sales": 1600 },
+    { "time": "3 PM", "sales": 1400 },
+    { "time": "4 PM", "sales": 1750 },
+    { "time": "5 PM", "sales": 1300 }
+  ],
+
+  "topProductsByPeriod": {
+    "today": [
+      { "name": "Premium Coffee", "sales": 145, "revenue": 725 },
+      { "name": "Croissant", "sales": 89, "revenue": 267 },
+      { "name": "Latte", "sales": 78, "revenue": 390 },
+      { "name": "Bagel & Cream Cheese", "sales": 67, "revenue": 402 },
+      { "name": "Espresso", "sales": 56, "revenue": 168 }
+    ],
+    "week": [
+      { "name": "Premium Coffee", "sales": 987, "revenue": 4935 },
+      { "name": "Latte", "sales": 654, "revenue": 3270 },
+      { "name": "Croissant", "sales": 543, "revenue": 1629 },
+      { "name": "Iced Coffee", "sales": 432, "revenue": 1728 },
+      { "name": "Muffin", "sales": 398, "revenue": 1194 }
+    ],
+    "month": [
+      { "name": "Premium Coffee", "sales": 4250, "revenue": 21250 },
+      { "name": "Latte", "sales": 3200, "revenue": 16000 },
+      { "name": "Sandwich Combo", "sales": 2800, "revenue": 25200 },
+      { "name": "Iced Coffee", "sales": 2100, "revenue": 8400 },
+      { "name": "Croissant", "sales": 1950, "revenue": 5850 }
+    ],
+    "quarterly": [
+      { "name": "Premium Coffee", "sales": 12750, "revenue": 63750 },
+      { "name": "Sandwich Combo", "sales": 8900, "revenue": 80100 },
+      { "name": "Latte", "sales": 8200, "revenue": 41000 },
+      { "name": "Seasonal Specials", "sales": 6500, "revenue": 45500 },
+      { "name": "Pastry Selection", "sales": 5800, "revenue": 20300 }
+    ],
+    "yearly": [
+      { "name": "Premium Coffee", "sales": 52000, "revenue": 260000 },
+      { "name": "Sandwich Combo", "sales": 38500, "revenue": 346500 },
+      { "name": "Latte", "sales": 34200, "revenue": 171000 },
+      { "name": "Seasonal Specials", "sales": 28900, "revenue": 202300 },
+      { "name": "Breakfast Items", "sales": 24600, "revenue": 147600 }
+    ]
+  },
+
+  "paymentDataByPeriod": {
+    "today": [
+      { "name": "Card", "value": 65, "color": "#8884d8" },
+      { "name": "Cash", "value": 25, "color": "#82ca9d" },
+      { "name": "Mobile", "value": 8, "color": "#ffc658" },
+      { "name": "Online", "value": 2, "color": "#ff7300" }
+    ],
+    "week": [
+      { "name": "Card", "value": 68, "color": "#8884d8" },
+      { "name": "Cash", "value": 22, "color": "#82ca9d" },
+      { "name": "Mobile", "value": 7, "color": "#ffc658" },
+      { "name": "Online", "value": 3, "color": "#ff7300" }
+    ],
+    "month": [
+      { "name": "Card", "value": 72, "color": "#8884d8" },
+      { "name": "Cash", "value": 18, "color": "#82ca9d" },
+      { "name": "Mobile", "value": 6, "color": "#ffc658" },
+      { "name": "Online", "value": 4, "color": "#ff7300" }
+    ],
+    "quarterly": [
+      { "name": "Card", "value": 75, "color": "#8884d8" },
+      { "name": "Cash", "value": 15, "color": "#82ca9d" },
+      { "name": "Mobile", "value": 5, "color": "#ffc658" },
+      { "name": "Online", "value": 5, "color": "#ff7300" }
+    ],
+    "yearly": [
+      { "name": "Card", "value": 78, "color": "#8884d8" },
+      { "name": "Cash", "value": 12, "color": "#82ca9d" },
+      { "name": "Mobile", "value": 4, "color": "#ffc658" },
+      { "name": "Online", "value": 6, "color": "#ff7300" }
+    ]
+  },
+
+  "employeeData": [
+    { "name": "Sarah M.", "sales": 2850, "transactions": 23, "avg": 123.91 },
+    { "name": "Mike R.", "sales": 2650, "transactions": 19, "avg": 139.47 },
+    { "name": "Emma L.", "sales": 3100, "transactions": 21, "avg": 147.62 },
+    { "name": "James K.", "sales": 3850, "transactions": 24, "avg": 160.42 }
+  ],
+
+  "alerts": [
+    { "type": "warning", "message": "Vanilla Syrup - Only 3 units left", "priority": "high" },
+    { "type": "info", "message": "5 new customers today", "priority": "low" },
+    { "type": "warning", "message": "Unusual refund activity - $125 in last hour", "priority": "medium" }
+  ]
+}
