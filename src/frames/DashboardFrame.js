@@ -1,5 +1,6 @@
 // src/frames/DashboardFrame.js
 import React from 'react';
+import { apiService } from "../services/apiService";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { AlertTriangle, TrendingUp, Users, ShoppingCart, DollarSign, Package, Clock, AlertCircle } from 'lucide-react';
 import KPICard from '../components/KPICard';

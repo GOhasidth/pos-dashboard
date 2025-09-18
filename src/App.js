@@ -4,11 +4,13 @@ import NavigationHeader from './components/NavigationHeader';
 import DashboardFrame from './frames/DashboardFrame';
 import PredictionsFrame from './frames/PredictionsFrame';
 import PatternAnalysisFrame from './frames/PatternAnalysisFrame';
-
-// Import JSON data files
+import apiService from './services/apiService';
+// ADD THESE LINES:
 import salesDataJson from './data/salesData.json';
 import predictionsDataJson from './data/predictionsData.json';
 import patternAnalysisJson from './data/patternAnalysis.json';
+// You can keep this for later:
+// import apiService from './services/apiService';
 
 const POSDashboard = () => {
   const [currentPage, setCurrentPage] = useState('dashboard');
@@ -25,18 +27,46 @@ const POSDashboard = () => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
-
-  // Load data on component mount
-  useEffect(() => {
+// Load data - mix of API and JSON
+// Load data - mix of real API and sample JSON
+// Replace your current useEffect with this:
+useEffect(() => {
+  const loadData = async () => {
     try {
       setDashboardData(salesDataJson);
       setPredictionsData(predictionsDataJson);
       setPatternData(patternAnalysisJson);
+      
+      // Get real sales data for the selected period
+      console.log('Loading real sales data for:', selectedPeriod);
+      const salesResponse = await apiService.getSalesSummary(selectedPeriod);
+      
+      const updatedDashboardData = {
+        ...salesDataJson,
+        salesData: {
+          ...salesDataJson.salesData,
+          [selectedPeriod]: {
+            total: salesResponse.data.totalSales,
+            transactions: salesResponse.data.transactions,
+            avgOrder: salesResponse.data.avgOrder,
+            activeCustomers: salesResponse.data.activeCustomers
+          }
+        }
+      };
+      
+      setDashboardData(updatedDashboardData);
+      console.log(`Real ${selectedPeriod} data loaded:`, salesResponse.data);
+      
     } catch (error) {
-      console.error('Error loading data:', error);
-      // You can add fallback data here if needed
+      console.error('API Error:', error);
+      setDashboardData(salesDataJson);
+      setPredictionsData(predictionsDataJson);
+      setPatternData(patternAnalysisJson);
     }
-  }, []);
+  };
+  
+  loadData();
+}, [selectedPeriod]); // Add selectedPeriod as dependency
 
   // Show loading if data hasn't loaded yet
   if (!dashboardData || !predictionsData || !patternData) {
