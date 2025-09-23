@@ -14,11 +14,15 @@ export const getSalesSummary = (period = "today", ttl = 2) =>
 export const getSalesTimeseries = (period = "yearly", ttl = 2) =>
   api.get("/sales/timeseries", { params: { period, ttl } }).then(r => r.data);
 
+export const getTopProducts = (period = "today", ttl = 2, limit = 10) =>
+  api.get("/products/top", { params: { period, ttl, limit } }).then(r => r.data);
 
+export const getTransactions = (period = "today", ttl = 2) =>
+  api.get("/transactions", { params: { period, ttl } }).then(r => r.data);
 
 export default {
   getSalesSummary,
   getSalesTimeseries,
+  getTopProducts,
   getTransactions,
-  getPatternAnalysis,
 };
