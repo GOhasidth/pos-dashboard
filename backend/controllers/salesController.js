@@ -46,6 +46,49 @@ async function getSummary(req, res) {
    
 
 // =============== TIMESERIES (yearly, quarter) =================
+    if (period === 'month') {
+      const q = await pool.request()
+        .input('ttl', sql.Int, ttl)
+        .query(`
+          WITH bm AS (
+            SELECT
+              DATEADD(DAY, 1, EOMONTH(GETDATE(), -2)) AS s,   -- first day of previous month
+              DATEADD(DAY, 1, EOMONTH(GETDATE(), -1)) AS e    -- first day of current month
+          )
+          SELECT
+            s AS start_date,
+            DATEADD(DAY, -1, e) AS end_date,
+            SUM(CAST(F64 AS decimal(18,2))) AS total_units,
+            SUM(CAST(F65 AS decimal(18,2))) AS total_sales,
+            COUNT(*)                        AS transactions
+          FROM STORESQL.dbo.RPT_FIN r
+          CROSS JOIN bm
+          WHERE r.F254 >= s AND r.F254 < e
+            AND r.F1034 = @ttl
+            AND r.F1031 = 'D';
+        `);
+
+      const x = q.recordset[0] || {};
+      const avg = x.transactions ? Number((Number(x.total_sales||0)/Number(x.transactions)).toFixed(2)) : 0;
+
+      return res.json({
+        period: 'month',
+        startDate: x.start_date, endDate: x.end_date,
+        totalSales: Number(x.total_sales||0),
+        totalUnits: Number(x.total_units||0),
+        transactions: Number(x.transactions||0),
+        avgOrder: avg
+      });
+    }
+
+    return res.status(400).json({ error: "period must be 'today' or 'month' on this endpoint." });
+  } catch (e) {
+    console.error('summary error:', e);
+    res.status(500).json({ error: e.message });
+  }
+}
+
+// =============== TIMESERIES (yearly, quarter) =================
 async function getTimeseries(req, res) {
   try {
     const period = (req.query.period || 'yearly').toLowerCase();
@@ -80,40 +123,6 @@ async function getTimeseries(req, res) {
         }))
       });
     }
-    if (period === 'month') {
-  const q = await pool.request()
-    .input('ttl', sql.Int, ttl)
-    .query(`
-      WITH bm AS (
-        SELECT
-          DATEADD(DAY, 1, EOMONTH(GETDATE(), -2)) AS s,   -- first day of previous month
-          DATEADD(DAY, 1, EOMONTH(GETDATE(), -1)) AS e    -- first day of current month
-      )
-      SELECT
-        s AS start_date,
-        DATEADD(DAY, -1, e) AS end_date,
-        SUM(CAST(F64 AS decimal(18,2))) AS total_units,
-        SUM(CAST(F65 AS decimal(18,2))) AS total_sales,
-        COUNT(*)                        AS transactions
-      FROM STORESQL.dbo.RPT_FIN r
-      CROSS JOIN bm
-      WHERE r.F254 >= s AND r.F254 < e
-        AND r.F1034 = @ttl
-        AND r.F1031 = 'D';
-    `);
-
-  const x = q.recordset[0] || {};
-  const avg = x.transactions ? Number((Number(x.total_sales||0)/Number(x.transactions)).toFixed(2)) : 0;
-
-  return res.json({
-    period: 'month',
-    startDate: x.start_date, endDate: x.end_date,
-    totalSales: Number(x.total_sales||0),
-    totalUnits: Number(x.total_units||0),
-    transactions: Number(x.transactions||0),
-    avgOrder: avg
-  });
-}
 
     if (period === 'quarter') {
       // Your "last quarter" timeseries (three months)
